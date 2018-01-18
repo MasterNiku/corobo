@@ -346,7 +346,7 @@ class LabHub(BotPlugin):
         else:
             return 'dead'
 
-    @re_botcmd(pattern=r'pr\s+stats\s+(\d+)(?:hours|hrs)')
+    @re_botcmd(pattern=r'pr\s+stats\s+(\d+)(?:hours|hrs)',re_cmd_name_help='pr stats <number-of-hours>(hours|hrs)',flags=re.IGNORECASE)
     def pr_stats(self, msg, match):
         hours = match.group(1)
         pr_count = dict()
